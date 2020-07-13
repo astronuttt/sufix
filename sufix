@@ -77,8 +77,9 @@ class SubtitleFix:
                     pass
 
                 # use persian numbers
-                for i in range(0, 10):
-                    line = line.replace(str(i), self.number[i])
+                if not any(font in line for font in ["font", "color", "#ff", "#FF", "</font>"]):
+                    for i in range(0, 10):
+                        line = line.replace(str(i), self.number[i])
 
                 # for ltr problems some peoples put '-' on EOL
                 # it should be in start
