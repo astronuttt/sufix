@@ -173,8 +173,8 @@ def cli():
 @click.option('-fp', '--fullpath', default=None)
 @click.option('-i', '--input', default=None)
 @click.option('-p', '--path', default=lambda: os.getcwd())
-@click.option('-cs', '--custompath', default=subtitles_path)
-def fix(fullpath, input, path, custom_path):
+@click.option('-cs', '--custompath', is_flag=True, default=None, help="Use custom path for subtitle folders")
+def fix(fullpath, input, path, custompath):
     if fullpath is not None:
         file_path = fullpath
 
@@ -182,8 +182,8 @@ def fix(fullpath, input, path, custom_path):
         click.echo("Not a valid filepath")
         sys.exit(0)
     else:
-        if custom_path != "":
-            path = custom_path
+        if custompath != "":
+            path = custompath
         file_path = path + "/" + input
 
     sufix(file_path)
