@@ -1,11 +1,11 @@
-a simple and fully functional command line script for fixing persian 
+a simple but fully functional command line script for fixing persian 
 subtitles encoding and other problems based on an old project from [aliva](https://github.com/aliva).
 
 
 ## Important
 
-This is a simple nautilus script for fixing Persian subtitles.
-If you don't want to watch videos with Persian subtitles this script won't be usefull for you...
+This is a simple script for fixing Persian subtitles.
+If you don't want to watch videos with Persian subtitles this script won't be useful for you...
 
 
 ### project will be updated soon...
