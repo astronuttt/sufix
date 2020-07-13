@@ -182,7 +182,7 @@ def fix(fullpath, input, path, custompath):
         click.echo("Not a valid filepath")
         sys.exit(0)
     else:
-        if custompath != "":
+        if custompath is not None:
             path = custompath
         file_path = path + "/" + input
 
