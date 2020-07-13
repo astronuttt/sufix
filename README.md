@@ -14,7 +14,7 @@ If you don't want to watch videos with Persian subtitles this script won't be us
 
 you need git and python3 installed on your system!
 
-`git clone git@github.com:sinaebrahimi1/sufix.git && cd sufix`
+`git clone https://github.com/sinaebrahimi1/sufix.git && cd sufix`
 
 `pip install -r requirements.txt`
 
