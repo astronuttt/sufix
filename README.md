@@ -26,16 +26,16 @@ Done!
 ## How it works?
 fixing a subtitle in working directory:
 
-`sufix.py fix -i filename.srt`
+`sufix fix -i filename.srt`
 
 fixing a subtitle using its full path:
 
-`sufix.py fix -fp fullpath` example: /home/sina/subtitles/How.i.met.your.mother.S05E05.srt
+`sufix fix -fp fullpath` example: /home/sina/subtitles/How.i.met.your.mother.S05E05.srt
 
 or you can set your subtitle folder in `subtitles_path` variable in the beginning 
 of the file and script will use that path as subtitle folder:
 
-`sufix.py fix -i filename.srt -cp`
+`sufix fix -i filename.srt -cp`
 
 
 
