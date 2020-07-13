@@ -8,6 +8,7 @@ import click
 
 not_changed_enything = "فایل وارد شده زیرنویس نیست، دقت کنید که فایل با پسوند .srt نیاز است!"
 working_dir = os.getcwd()
+subtitles_path = ""  # example: "/home/sina/subtitles" or leave it empty
 
 
 class SubtitleFix:
@@ -172,7 +173,8 @@ def cli():
 @click.option('-fp', '--fullpath', default=None)
 @click.option('-i', '--input', default=None)
 @click.option('-p', '--path', default=lambda: os.getcwd())
-def fix(fullpath, input, path):
+@click.option('-cs', '--custompath', default=subtitles_path)
+def fix(fullpath, input, path, custom_path):
     if fullpath is not None:
         file_path = fullpath
 
@@ -180,6 +182,8 @@ def fix(fullpath, input, path):
         click.echo("Not a valid filepath")
         sys.exit(0)
     else:
+        if custom_path != "":
+            path = custom_path
         file_path = path + "/" + input
 
     sufix(file_path)
