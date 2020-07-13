@@ -14,25 +14,28 @@ If you don't want to watch videos with Persian subtitles this script won't be us
 
 you need git and python3 installed on your system!
 
-`git clone https://github.com/sinaebrahimi1/sufix.git && cd sufix`
+`cd /tmp && git clone https://github.com/sinaebrahimi1/sufix.git && cd sufix`
 
 `pip install -r requirements.txt`
+
+`chmod +x install.sh` and
+`./install.sh` to install the script
 
 Done!
 
 ## How it works?
 fixing a subtitle in working directory:
 
-`./sufix.py fix -i filename.srt`
+`sufix.py fix -i filename.srt`
 
 fixing a subtitle using its full path:
 
-`./sufix.py fix -fp fullpath` example: /home/sina/subtitles/How.i.met.your.mother.S05E05.srt
+`sufix.py fix -fp fullpath` example: /home/sina/subtitles/How.i.met.your.mother.S05E05.srt
 
 or you can set your subtitle folder in `subtitles_path` variable in the beginning 
 of the file and script will use that path as subtitle folder:
 
-`./sufix.py fix -i filename.srt -cp`
+`sufix.py fix -i filename.srt -cp`
 
 
 
