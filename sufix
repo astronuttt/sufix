@@ -85,7 +85,7 @@ class SubtitleFix:
                 # it should be in the beginning
                 line.strip()
                 if len(line) != 0:
-                    if line[1] == '-':
+                    if line[0] == '-':
                         line.replace("-", "")
                         line = f'{line} -'
 
