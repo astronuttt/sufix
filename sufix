@@ -47,7 +47,7 @@ class SubtitleFix:
         self.string = self.string.replace(u'ك', u'ک')
 
     def fix_question_mark(self):
-        # quistion mark in persina is ؟ not ?
+        # question mark in persian is ؟ not ?
         self.string = self.string.replace('?', u'؟')
 
     def fix_other(self):
@@ -69,7 +69,7 @@ class SubtitleFix:
                 string += line
             else:
                 # this should be subtitle
-                s = re.match('^([\.!?]*)', line)
+                s = re.match('^([\.!?]*)', line)  # dots
 
                 try:
                     line = re.sub('^%s' % s.group(), '', line)
@@ -82,18 +82,23 @@ class SubtitleFix:
                         line = line.replace(str(i), self.number[i])
 
                 # for ltr problems some peoples put '-' on EOL
-                # it should be in start
-                if len(line) != 0 and line[-1] == '-':
-                    line = '- %s' % line[:-1]
-                line += s.group()
+                # it should be in the beginning
+                line.strip()
+                if len(line) != 0:
+                    if line[1] == '-':
+                        line.replace("-", "")
+                        line = f'{line} -'
 
-                # put rtl char in start of line (it forces some player to show that line rtl
-                string += u'\u202B' + line  # str(line, 'utf-8')
+                line = f"{s.group()}{line}".strip()
 
-            # noting to see here
+                # put rtl char in start of line (it forces some players to show that line in rtl mode)
+                # string += u'\u202B' + line  # str(line, 'utf-8')
+                string += line
+
+            # nothing to see here
             string += '\n'
 
-            self.string = string
+        self.string = string
 
     def decode_string(self, string):
         self.string = string
